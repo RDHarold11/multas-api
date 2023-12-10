@@ -6,6 +6,7 @@ import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
 import tarifarioRoutes from "./routes/tarifario.routes.js";
 import agentesRoutes from "./routes/agente.routes.js";
 import multasRoutes from "./routes/multas.routes.js";
+import placasRoutes from "./routes/vehiculo.routes.js";
 
 import connectDB from "./config/db.js";
 
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/tarifario", tarifarioRoutes);
 app.use("/api/agentes", agentesRoutes);
 app.use("/api/multas", multasRoutes);
+app.use("/api/placa", placasRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
